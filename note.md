@@ -1,6 +1,6 @@
 ## 由数据范围反推算法复杂度以及算法内容
 
-![image-20230710152832359](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710152832359.png)
+![image-20230717210629574](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230717210629574.png)
 
 ## 常见思考方向
 

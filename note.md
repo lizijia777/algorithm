@@ -6,9 +6,20 @@
 
 ![image-20230710152956218](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710152956218.png)
 
-## 排序+双指针
+## 双指针
 
-### Leetcode-18 四数之和
+### Leetcode-11 盛最多水的容器
+
+对O(n)的算法写一下自己的理解，一开始两个指针一个指向开头一个指向结尾，此时容器的底是最大的，接下来随着指针向内移动，会造成容器的底变小，在这种情况下想要让容器盛水变多，就只有在容器的高上下功夫。 那我们该如何决策哪个指针移动呢？我们能够发现不管是左指针向右移动一位，还是右指针向左移动一位，容器的底都是一样的，都比原来减少了 1。这种情况下我们想要让指针移动后的容器面积增大，就要使移动后的容器的高尽量大，所以我们选择指针所指的高较小的那个指针进行移动，这样我们就保留了容器较高的那条边，放弃了较小的那条边，以获得有更高的边的机会。
+
+### **Leetcode-42 接雨水**
+
+1. 找出最高点
+2. 分别从两边往最高点遍历：如果下一个数比当前数小，说明可以接到水
+
+### 双指针+排序
+
+#### Leetcode-18 四数之和
 
 属于n数之和类型，实际就是比三数之和多了一层循环后面两个数用双指针。
 
@@ -28,19 +39,19 @@
 
 
 
-### Leetcode-15 三数之和
+#### Leetcode-15 三数之和
 
 ![image-20230710153205156](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710153205156.png)
 
 本题的难点在于如何去除重复解。对于重复元素i：跳过，避免重复解；对于左右指针L和R，执行循环，判断左界和右界是否和下一位置重复，去除重复解。并同时将 L*,*R移到下一位置，寻找新的解；
 
-### Leetcode-16 最接近的三数之和
+#### Leetcode-16 最接近的三数之和
 
 ![image-20230710153651400](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710153651400.png)
 
 ![image-20230710154014435](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710154014435.png)
 
-### Leetcode-167 两数之和II - 输入有序数组
+#### Leetcode-167 两数之和II - 输入有序数组
 
 ![image-20230710154110141](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710154110141.png)
 
@@ -302,3 +313,24 @@ $$
 **集合：** 
 
 **状态计算：** 时间复杂度 O(nlogn)
+
+## 离线查询
+
+### LeetCode-1851 包含每个查询的最小区间
+
+自定义排序：
+
+那么我们可以对intervals按左端点 *left* 从小到大进行排序，qindex为正常排序
+
+    sort(qindex.begin(), qindex.end(), [&](int i, int j) -> bool {
+        return queries[i] < queries[j];
+    });
+    sort(intervals.begin(), intervals.end(), [](const vector<int> &it1, const vector<int> &it2) -> bool {
+            return it1[0] < it2[0];
+    });
+
+### 莫队算法（区间查询）
+
+![image-20230718110334440](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307181103509.png)
+
+![image-20230718110454915](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307181104951.png)

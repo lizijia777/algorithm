@@ -4,7 +4,7 @@
 
 ## 常见思考方向
 
-![image-20230710152956218](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710152956218.png)
+![image-20230721203637435](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212037127.png)
 
 ## 双指针
 
@@ -41,19 +41,19 @@
 
 #### Leetcode-15 三数之和
 
-![image-20230710153205156](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710153205156.png)
+![image-20230721203800005](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212038554.png)
 
 本题的难点在于如何去除重复解。对于重复元素i：跳过，避免重复解；对于左右指针L和R，执行循环，判断左界和右界是否和下一位置重复，去除重复解。并同时将 L*,*R移到下一位置，寻找新的解；
 
 #### Leetcode-16 最接近的三数之和
 
-![image-20230710153651400](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710153651400.png)
+![image-20230721203823872](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212038950.png)
 
 ![image-20230710154014435](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710154014435.png)
 
 #### Leetcode-167 两数之和II - 输入有序数组
 
-![image-20230710154110141](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230710154110141.png)
+![](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212038950.png)
 
 最简单的双指针，三个数的双指针还需要遍历i；
 
@@ -61,7 +61,7 @@
 
 ### 区间覆盖
 
-![QQ图片20201026093918.jpg](https://cdn.acwing.com/media/article/image/2020/10/26/652_1a48e6a417-QQ%E5%9B%BE%E7%89%8720201026093918.jpg)区间覆盖模板题 贪心思想：左端点排序 然后在能保证覆盖整个区间的情况找最大的右端点区间(使用双指针查找)
+![image-20230721203925628](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212039749.png)区间覆盖模板题 贪心思想：左端点排序 然后在能保证覆盖整个区间的情况找最大的右端点区间(使用双指针查找)
 
 1.将所有区间按照左端点从小到大进行排序
 
@@ -148,7 +148,7 @@ int main()
 
 ## 动态规划DP
 
-![图片4.jpg](https://cdn.acwing.com/media/article/image/2020/03/25/13039_154f0d0e6e-%E5%9B%BE%E7%89%874.jpg)
+![](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212039749.png)
 
 
 
@@ -164,7 +164,7 @@ int main()
 
 **集合：从(i,j)到最后一层的所有方案**
 
-**状态计算：**![image-20230713110202681](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230713110202681.png)
+**状态计算：**![image-20230721203954090](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212039124.png)
 
 #### LeetCode-931 下降路径最小和
 
@@ -188,11 +188,11 @@ int main()
 
 *情况一：最优解的两条路线是相互交叉经过的*
 
-*<img src="https://cdn.acwing.com/media/article/image/2021/05/28/55909_535aaa60bf-IMG_41A02C1923F3-1.jpeg" alt="IMG_41A02C1923F3-1.jpeg" style="zoom:25%;" />*
+![image-20230721204022117](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212040150.png)
 
 *则我们可以对交叉出来的部分进行路线交换，如下图的操作:*
 
-*<img src="https://cdn.acwing.com/media/article/image/2021/05/28/55909_f4f7c194bf-IMG_D04B2FA5BFB0-1.jpeg" alt="IMG_D04B2FA5BFB0-1.jpeg" style="zoom:25%;" />*
+![image-20230721204059810](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212040844.png)
 
 *于是，我们可以发现，所有的交叉路线都会映射成一种一条路线只在下方走，一条路线只在上方走的不交叉路线*
 
@@ -200,7 +200,7 @@ int main()
 
 *情况二：最优解的两条路线不交叉，但在某些点有重合。*
 
-*<img src="https://cdn.acwing.com/media/article/image/2021/05/28/55909_8122f3b1bf-IMG_91EF0191824B-1.jpeg" alt="IMG_91EF0191824B-1.jpeg" style="zoom:25%;" />*
+![image-20230721204126017](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212041051.png)
 
 *由于方格取数，对于走到相同格子时，只会累加一次格子的价值*
 
@@ -208,7 +208,7 @@ int main()
 
 *对于重合的格子，我们必然可以在两条路线中找到额外的一条或两条路线，使得新的路线不发生重合*
 
-*具体参照下图：<img src="https://cdn.acwing.com/media/article/image/2021/05/28/55909_f3349557bf-IMG_6202C63C2DFE-1.jpeg" alt="IMG_6202C63C2DFE-1.jpeg" style="zoom:25%;" />*
+*具体参照下图：![](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212041051.png)
 
 *由于原路线是最优解，则必然 wA=wB=0*
 
@@ -220,9 +220,9 @@ int main()
 
 **边界条件：![image-20230713163004846](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230713163004846.png)**
 
-**集合：<img src="https://cdn.acwing.com/media/article/image/2021/05/27/55909_2df58fe8be-IMG_623B17197D17-1.jpeg" alt="IMG_623B17197D17-1.jpeg" style="zoom:25%;" />**
+![](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212042700.png)
 
-**状态计算：**![image-20230713160734547](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230713160734547.png)
+**状态计算：**![image-20230721204353187](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212043221.png)
 
 ### 背包问题
 
@@ -255,7 +255,7 @@ $$
 
 **集合：考虑前i天的股市，第i天手中持股状态为j（j=0,未持股；j=1,持股）的方案**
 
-**状态计算**：<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230711151008630.png" alt="image-20230711151008630"  />
+**状态计算**：![image-20230721204237204](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212042250.png)
 
 #### AcWing-1911 最大子序列交替和
 
@@ -273,11 +273,11 @@ $$
 
 **集合：** 表示从第一个数开始算，以第 i个数结尾的最长上升子序列
 
-**状态计算：**![image-20230712111539316](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230712111539316.png)
+**状态计算：**![image-20230721204300671](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212043702.png)
 
 #### AcWing-482 合唱队形
 
-**思路：![image-20230712111031924](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230712111031924.png)**
+**思路：**![image-20230721204318512](https://raw.githubusercontent.com/lizijia777/imageSet/main/note1/202307212043546.png)
 
 **属性:min**
 
